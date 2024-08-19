@@ -11,14 +11,31 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  # def create
+  #   @post = Post.new(post_params)
+  #   @post.user = current_user # Associate the post with the current user
+
+  #   if @post.save
+  #     redirect_to @post, notice: 'Post was successfully created.'
+  #   else
+  #     render :new
+  #   end
+  # end
+
   def create
     @post = Post.new(post_params)
-    @post.user = current_user # Associate the post with the current user
+    @post.user = current_user
 
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
+      respond_to do |format|
+        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.js   # This will render create.js.erb
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js   # This will render create.js.erb
+      end
     end
   end
 

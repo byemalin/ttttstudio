@@ -16,6 +16,7 @@
 
 
 /* SCSS Partials: */
+@import "pages/index";
 @import "components/index";
 
 

@@ -16,8 +16,12 @@
 
 
 /* SCSS Partials: */
-@import "pages/index";
-@import "components/index";
+/* @import "pages/index";
+@import "components/index"; */
+
+@import "app/assets/stylesheets/pages/index";
+@import "app/assets/stylesheets/components/index";
+
 
 
 .applicationSplitContainer{

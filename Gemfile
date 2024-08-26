@@ -5,6 +5,9 @@ ruby "3.3.0"
 # Manually adding Devise
 gem 'devise'
 
+# I'm adding sass for SCSS
+gem 'sass-rails'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 

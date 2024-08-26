@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+
+/* SCSS Partials: */
+@import "components/index";
+
+
+.applicationSplitContainer{
+  display: flex;
+  justify-content: stretch;
+
+
+  .left{
+    width: 20%;
+  }
+  .right{
+    width: 20%;
+  }
+
+  .center{
+    width: 60%;
+  }
+}
+
+.applicationSplitContainer > div{
+  border: red solid 1px;
+}

@@ -1,0 +1,19 @@
+<%# Main Navbar %>
+
+<header>
+
+  <a href="">
+    <div id="navLogoContainer">
+      <%#= image_tag "logos/TTTT_dot_logo.svg" %>
+      <%= image_tag "logos/TTTT_logo_1.svg" %>
+    </div>
+  </a>
+
+  <nav>
+      <ul>
+        <li><%= link_to "blog", posts_path%></li>
+        <li><%= link_to "radio", posts_path%></li>
+      </ul>
+  </nav>
+
+</header>

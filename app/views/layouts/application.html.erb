@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ttttstudio</title>
+    <title>TTTT</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,23 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%# Flashes %>
+    <%#= render "shared/flashes" %>
+
+    <%# Navbar %>
+    <div class="applicationSplitContainer">
+
+      <div class="left">
+        <%= render "shared/navbar" %>
+      </div>
+
+      <div class="center">
+        <%= yield %>
+      </div>
+
+      <div class="right"></div>
+
+    </div>
+
   </body>
 </html>

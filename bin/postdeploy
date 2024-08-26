@@ -1,1 +1,2 @@
+bundle install
 rails db:migrate

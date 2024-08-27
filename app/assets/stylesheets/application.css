@@ -19,6 +19,8 @@
 /* @import "pages/index";
 @import "components/index"; */
 
+/* For some reason scalingo needs me to put absolute file paths */
+
 @import "app/assets/stylesheets/pages/index";
 @import "app/assets/stylesheets/components/index";
 

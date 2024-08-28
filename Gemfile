@@ -11,6 +11,10 @@ gem 'sass-rails'
 # Im adding strong migrations gem
 gem "strong_migrations"
 
+# Adding dotenv manually
+gem 'dotenv-rails', groups: [:development, :test]
+
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 

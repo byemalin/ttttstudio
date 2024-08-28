@@ -1,9 +1,10 @@
 <article class = "postCard">
-  <%= link_to post do%>
-    <h2>
+
+  <h2  class="h2LinkNoUnderline">
+    <%= link_to post do%>
       <%= post.title %>
-    </h2>
-  <% end %>
+    <% end %>
+  </h2>
 
   <p>
     <%= post.user.name %>

@@ -1,0 +1,36 @@
+.flash {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flash-notice {
+  background-color: #e7f3fe;
+  border: 1px solid #b3e5fc;
+  color: #31708f;
+}
+
+.flash-alert {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+.flash-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: inherit;
+  padding: 0;
+  line-height: 1;
+  opacity: 0.6;
+}
+
+.flash-close:hover {
+  opacity: 1;
+}

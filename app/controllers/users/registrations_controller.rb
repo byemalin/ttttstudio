@@ -5,10 +5,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
 
   def create
-    if params[:user][:invitation_code] == "YOUR_SECRET_INVITATION_CODE"
+    if params[:user][:invitation_code] == ENV['INVITATION_CODE']
+      # Remove the invitation code from the user parameters before passing to Devise
+      params[:user].delete(:invitation_code)
       super
     else
-      flash[:alert] = "Invalid invitation code"
+      flash[:alert] = "Invalid invitation code. Contact us if you would like to join!"
       redirect_to new_user_registration_path
     end
   end

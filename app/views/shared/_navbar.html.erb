@@ -1,6 +1,6 @@
 <%# Main Navbar %>
 
-<header>
+<header id="mainNavbar">
 
   <a href="">
     <div id="navLogoContainer">
@@ -12,10 +12,20 @@
   <nav>
       <ul>
         <li><%= link_to "blog", posts_path%></li>
-
-
-        <li>  <%= link_to 'New Post', new_post_path %></li>
       </ul>
+
+      <br>
+      <br>
+
+      <% if user_signed_in? %>
+        <p>Welcome, <%= current_user.name %></p>
+        <p>Only for the gang:</p>
+        <p><%= link_to 'New Post', new_post_path %></p>
+      <% else %>
+        <li><%= link_to 'Log In', new_user_session_path %></li>
+        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+      <% end %>
+
   </nav>
 
 </header>

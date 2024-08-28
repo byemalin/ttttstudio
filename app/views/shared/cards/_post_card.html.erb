@@ -1,4 +1,4 @@
-<div>
+<article class = "postCard">
   <%= link_to post do%>
     <h2>
       <%= post.title %>
@@ -9,10 +9,11 @@
     <%= post.user.name %>
   </p>
 
-  <p>
-    <%= post.body %>
-  </p>
+  <p><%= truncate(post.body, length: 425) %></p>
 
-  <p><%= post.created_at %></p>
+  <div class="alignRight">
+    <%= link_to 'See full post', post %>
+    <p><%= post.created_at %></p>
+  </div>
 
-</div>
+</article>

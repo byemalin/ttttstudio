@@ -27,25 +27,19 @@
 
 
 .applicationSplitContainer{
-  display: flex;
-  justify-content: stretch;
+  display: grid;
+  grid-template-columns: 1.3fr 60% 1fr;
+  gap: 2rem;
 
   div{
-    border: red 1px solid;
-  }
-
-  .left{
-    width: 20%;
-  }
-  .right{
-    width: 20%;
+    /* border: red 1px solid; */
   }
 
   .center{
-    width: 60%;
     padding: 2rem;
   }
 }
+
 
 /* Highlight colour for the live date and time: */
 #ct {

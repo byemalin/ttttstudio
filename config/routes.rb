@@ -14,4 +14,11 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  # Adding route to show posts associated with 1 user:
+  resources :users, only: [:show] do
+    member do
+      get 'posts', to: 'posts#user_posts'
+    end
+  end
+
 end

@@ -2,7 +2,7 @@
 
 <header id="mainNavbar">
 
-  <a href="">
+  <a href="/posts">
     <div id="navLogoContainer">
       <%#= image_tag "logos/TTTT_dot_logo.svg" %>
       <%= image_tag "logos/TTTT_logo_1.svg" %>
@@ -19,7 +19,7 @@
 
       <% if user_signed_in? %>
         <p>Welcome, <%= current_user.name %></p>
-        <p>Only for the gang:</p>
+        <p><strong>Only for the gang:</strong></p>
         <p><%= link_to 'new blog post', new_post_path %></p>
       <% else %>
         <li><%= link_to 'log in', new_user_session_path %></li>

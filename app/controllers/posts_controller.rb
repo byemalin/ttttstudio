@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
-    @posts = Post.all
+    # @posts = Post.all
+    @posts = Post.order(created_at: :desc)
   end
 
   def show
@@ -38,6 +39,11 @@ class PostsController < ApplicationController
     redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
 
+  def user_posts
+    @user = User.find(params[:id])
+    @posts = @user.posts.order(created_at: :desc)
+  end
+
   private
 
   def set_post
@@ -47,4 +53,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :body)
   end
+
 end

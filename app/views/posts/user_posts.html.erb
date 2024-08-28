@@ -1,0 +1,13 @@
+<!-- app/views/posts/user_posts.html.erb -->
+
+<h1>Posts by <%= @user.name %></h1>
+
+<% if @posts.any? %>
+  <ul>
+    <% @posts.each do |post| %>
+      <%= render 'shared/cards/post_card' , post: post%>
+    <% end %>
+  </ul>
+<% else %>
+  <p><%= @user.name %> has not posted anything yet.</p>
+<% end %>

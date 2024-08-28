@@ -47,3 +47,25 @@
 #ct {
   background-color: rgb(233, 235, 123);
 }
+
+
+.flash {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.flash.notice {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.flash.alert, .flash.error {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+.flash.warning {
+  background-color: #fcf8e3;
+  color: #8a6d3b;
+}

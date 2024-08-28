@@ -7,12 +7,14 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <%# Flashes %>
-    <%#= render "shared/flashes" %>
+    <%= render "shared/flashes" %>
 
     <%# Navbar %>
     <div class="applicationSplitContainer">
@@ -22,7 +24,7 @@
       </div>
 
       <div class="center">
-        <!-- This is for the live date: (defined in the script tag in the header below)-->
+        <!-- This is for the live date: -->
         <span id='ct'></span>
         <%= yield %>
       </div>
@@ -31,8 +33,8 @@
 
     </div>
 
+
+
   </body>
-
-
 
 </html>

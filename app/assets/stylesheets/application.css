@@ -30,6 +30,9 @@
   display: flex;
   justify-content: stretch;
 
+  div{
+    border: red 1px solid;
+  }
 
   .left{
     width: 20%;
@@ -40,9 +43,11 @@
 
   .center{
     width: 60%;
+    padding: 2rem;
   }
 }
 
-.applicationSplitContainer > div{
-  border: red solid 1px;
+/* Highlight colour for the live date and time: */
+#ct {
+  background-color: rgb(233, 235, 123);
 }

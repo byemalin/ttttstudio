@@ -14,6 +14,11 @@ gem "strong_migrations"
 # Adding dotenv manually
 gem 'dotenv-rails', groups: [:development, :test]
 
+# Adding cloudinary & active storage manually
+gem 'cloudinary', '~> 1.25.0'
+gem 'activestorage-cloudinary-service', '~> 0.2.3'
+
+
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"

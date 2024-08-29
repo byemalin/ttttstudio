@@ -1,37 +1,52 @@
+<main class = "postShowMain">
+
+  <h1><%= @post.title %></h1>
+  <%= link_to "#{@post.user.name}", posts_user_path(@post.user) %>
+  <p><%= @post.body %></p>
+
+  <br>
+
+  <div class="post-images">
+    <% @post.images.each do |image| %>
+      <%= image_tag image %>
+    <% end %>
+  </div>
+
+  <br>
+
+  <div class="alignRight">
+    <p><%= @post.created_at.strftime("%d.%m.%Y %H:%M") %></p>
+
+    <br>
+    <br>
+    <br>
+
+    <%= link_to "View all posts by #{@post.user.name}", posts_user_path(@post.user) %>
+  </div>
 
 
-<h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
-<p><%= @post.created_at.strftime("%d.%m.%Y %H:%M") %></p>
-
-<br>
-<br>
-<br>
-
-
-<%= link_to "View all posts by #{@post.user.name}", posts_user_path(@post.user) %>
-
-
-<%#= @post.created_at.strftime("%B %d, %Y") %>
+  <%#= @post.created_at.strftime("%B %d, %Y") %>
 
 
 
 
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  <br>
 
-<% if user_signed_in? %>
-  <p><strong>Only for the gang:</strong></p>
-  <p><%= current_user.name %>, here you can make changes to your post or delete it:</p>
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <%= link_to 'Delete This Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% else %>
-  <li><%= link_to 'log in', new_user_session_path %></li>
-  <li><%= link_to 'sign up', new_user_registration_path %></li>
-<% end %>
+  <% if user_signed_in? %>
+    <p><strong>Only for the gang:</strong></p>
+    <p><%= current_user.name %>, here you can make changes to your post or delete it:</p>
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+    <%= link_to 'Delete This Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% else %>
+    <li><%= link_to 'log in', new_user_session_path %></li>
+    <li><%= link_to 'sign up', new_user_registration_path %></li>
+  <% end %>
 
 
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  <br>
+
+</main>

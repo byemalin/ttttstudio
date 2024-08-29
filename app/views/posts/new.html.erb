@@ -48,11 +48,22 @@
   </div>
 
   <br>
+  <br>
+
+  <div class="field">
+    <%= form.label :images %>
+    <br>
+    <%= form.file_field :images, multiple: true, direct_upload: true %>
+  </div>
+
+  <br>
+  <br>
 
 
   <div class="actions">
     <%= form.submit %>
   </div>
+  <br>
 <% end %>
 
 <%= link_to 'Back', posts_path %>

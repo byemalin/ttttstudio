@@ -7,14 +7,16 @@
   </h2>
 
   <p>
-    <%= post.user.name %>
+    <%= link_to "#{post.user.name}", posts_user_path(post.user) %>
   </p>
 
   <p><%= truncate(post.body, length: 425) %></p>
 
   <div class="alignRight">
     <%= link_to 'See full post', post %>
-    <p><%= post.created_at %></p>
+
+    <p><em>(<%=post.created_at.strftime("%d.%m.%Y %H:%M")%>  <%=post.city%>, <%=post.country%>)</em></p>
+
   </div>
 
 </article>

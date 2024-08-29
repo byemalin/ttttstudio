@@ -15,13 +15,40 @@
 
   <div class="field">
     <%= form.label :title %>
+    <br>
     <%= form.text_field :title %>
   </div>
 
+  <br>
+  <br>
+
+  <p>What do you have to say? Or what are you working on?</p>
+
   <div class="field">
     <%= form.label :body %>
+    <br>
     <%= form.text_area :body %>
   </div>
+
+  <br>
+  <br>
+
+  <p>Where are you?</p>
+
+  <div class="field">
+    <%= form.label :city %>
+    <br>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <br>
+    <%= form.text_field :country %>
+  </div>
+
+  <br>
+
 
   <div class="actions">
     <%= form.submit %>

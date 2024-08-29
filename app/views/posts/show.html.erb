@@ -32,7 +32,10 @@
       <p><strong>Only for the gang:</strong></p>
       <p><%= current_user.name %>, here you can make changes to your post or delete it:</p>
       <%= link_to 'Edit', edit_post_path(@post) %> |
-      <%= link_to 'Delete This Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= button_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+
       <br>
       <p>Or, you can create a <%= link_to 'New Blog Post', new_post_path %></p>
     <% else %>
@@ -40,6 +43,10 @@
       <br>
       <%= link_to 'sign up', new_user_registration_path %>
     <% end %>
+
+
+    <%= link_to 'Test DELETE', post_path(@post), method: :delete, data: { confirm: 'Testing DELETE?' }, class: 'test-delete-link' %>
+
 
   </div>
 

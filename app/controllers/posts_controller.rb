@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :user_posts]
   before_action :set_post, only: %i[show edit update destroy]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
     # @posts = Post.all
@@ -35,8 +36,15 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    @post = Post.find(params[:id])
+    if @post.user == current_user
+      @post.destroy
+      Rails.logger.debug "Post destroyed successfully"
+      redirect_to posts_url, notice: 'Post was successfully deleted.'
+    else
+      Rails.logger.debug "Unauthorized delete attempt"
+      redirect_to posts_url, alert: 'You are not authorized to delete this post.'
+    end
   end
 
   def user_posts
@@ -52,6 +60,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body, :city, :country, images: [])
+  end
+
+  def authorize_user!
+    redirect_to root_path, alert: "You are not authorized to perform this action." unless @post.user == current_user
   end
 
 end

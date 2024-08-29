@@ -33,6 +33,8 @@
       <p><%= current_user.name %>, here you can make changes to your post or delete it:</p>
       <%= link_to 'Edit', edit_post_path(@post) %> |
       <%= link_to 'Delete This Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <br>
+      <p>Or, you can create a <%= link_to 'New Blog Post', new_post_path %></p>
     <% else %>
       <%= link_to 'log in', new_user_session_path %>
       <br>

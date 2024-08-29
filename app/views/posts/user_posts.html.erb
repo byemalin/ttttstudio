@@ -2,6 +2,15 @@
 
 <h1>Posts by <%= @user.name %></h1>
 
+<% if user_signed_in? %>
+  <div>
+    <p>Welcome, <%= current_user.name %></p>
+    <p><strong>Only the gang can see this section.</strong></p>
+    <p><%= link_to 'new blog post', new_post_path %></p>
+    <br>
+  </div>
+<% end %>
+
 <% if @posts.any? %>
   <div>
     <% @posts.each do |post| %>

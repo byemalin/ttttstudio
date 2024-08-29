@@ -24,18 +24,20 @@
 @import "app/assets/stylesheets/pages/index";
 @import "app/assets/stylesheets/components/index";
 
-
+html{
+  margin:0;
+  /* height: 100%;
+  width: 100%; */
+}
 
 .applicationSplitContainer{
+  height: 100dvh;
+
   display: grid;
   grid-template-columns: 1.3fr 60% 1fr;
   gap: 2rem;
 
   padding: 1rem;
-
-  div{
-    /* border: red 1px solid; */
-  }
 
   .center{
     padding: 2rem;
@@ -49,23 +51,27 @@
 }
 
 
-.flash {
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
+@media only screen and (max-width: 1024px){
+  .applicationSplitContainer{
+    grid-template-columns: 3fr 7fr;
+
+    .right{
+      display: none;
+    }
+  }
 }
 
-.flash.notice {
-  background-color: #dff0d8;
-  color: #3c763d;
-}
 
-.flash.alert, .flash.error {
-  background-color: #f2dede;
-  color: #a94442;
-}
+@media only screen and (max-width: 425px){
+  .applicationSplitContainer{
+    grid-template-columns: 1fr;
 
-.flash.warning {
-  background-color: #fcf8e3;
-  color: #8a6d3b;
+    .right{
+      display: none;
+    }
+
+    .center{
+      padding: 1rem;
+    }
+  }
 }

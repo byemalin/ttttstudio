@@ -16,36 +16,36 @@
         <li><%= link_to "store", posts_path%></li>
         <br>
         <li><%= link_to "radio", posts_path%></li>
-
-        <br>
-        <br>
-        <br>
-
-        <li><strong>Team: </strong></li>
-        <br>
-        <li><%= link_to "Ezra", posts_path%></li>
-        <br>
-        <li><%= link_to "Jun", posts_path%></li>
-        <br>
-        <li><%= link_to "Malin", posts_path%></li>
-        <br>
-        <li><%= link_to "Rocco", posts_path%></li>
-
-
       </ul>
-
-      <br>
-      <br>
-
-      <% if user_signed_in? %>
-        <p>Welcome, <%= current_user.name %></p>
-        <p><strong>Only for the gang:</strong></p>
-        <p><%= link_to 'new blog post', new_post_path %></p>
-      <% else %>
-        <li><%= link_to 'log in', new_user_session_path %></li>
-        <li><%= link_to 'sign up', new_user_registration_path %></li>
-      <% end %>
-
   </nav>
 
+
 </header>
+
+<nav id = "teamNav">
+  <br>
+  <br>
+  <br>
+  <ul>
+    <li><%= link_to "Ezra", posts_path%></li>
+    <br>
+    <li><%= link_to "Jun", posts_path%></li>
+    <br>
+    <li><%= link_to "Malin", posts_path%></li>
+    <br>
+    <li><%= link_to "Rocco", posts_path%></li>
+  </ul>
+</nav>
+
+<div id="navbarGang">
+    <% if user_signed_in? %>
+      <br>
+      <br>
+      <p>Welcome, <%= current_user.name %></p>
+      <p><strong>Only for the gang:</strong></p>
+      <p><%= link_to 'new blog post', new_post_path %></p>
+    <% else %>
+      <li><%= link_to 'log in', new_user_session_path %></li>
+      <li><%= link_to 'sign up', new_user_registration_path %></li>
+    <% end %>
+</div>

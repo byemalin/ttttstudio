@@ -22,28 +22,24 @@
     <br>
 
     <%= link_to "View all posts by #{@post.user.name}", posts_user_path(@post.user) %>
+
+
+    <br>
+    <br>
+    <br>
+
+    <% if user_signed_in? %>
+      <p><strong>Only for the gang:</strong></p>
+      <p><%= current_user.name %>, here you can make changes to your post or delete it:</p>
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+      <%= link_to 'Delete This Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% else %>
+      <%= link_to 'log in', new_user_session_path %>
+      <br>
+      <%= link_to 'sign up', new_user_registration_path %>
+    <% end %>
+
   </div>
-
-
-  <%#= @post.created_at.strftime("%B %d, %Y") %>
-
-
-
-
-  <br>
-  <br>
-  <br>
-
-  <% if user_signed_in? %>
-    <p><strong>Only for the gang:</strong></p>
-    <p><%= current_user.name %>, here you can make changes to your post or delete it:</p>
-    <%= link_to 'Edit', edit_post_path(@post) %> |
-    <%= link_to 'Delete This Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% else %>
-    <li><%= link_to 'log in', new_user_session_path %></li>
-    <li><%= link_to 'sign up', new_user_registration_path %></li>
-  <% end %>
-
 
   <br>
   <br>

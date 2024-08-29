@@ -16,3 +16,48 @@
     padding: 0;
   }
 }
+
+#navbarGang{
+  padding: 1rem;
+}
+
+#teamNav{
+  padding: 1rem;
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+}
+
+
+@media only screen and (max-width: 425px){
+  #navLogoContainer{
+    width: 100%;
+    height: auto;
+
+    margin: 0 auto;
+  }
+
+  #navbarGang{
+    display: none;
+  }
+
+  #mainNavbar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    text-align: right;
+    align-items: center;
+  }
+
+  #teamNav{
+    display: none;
+    ul{
+      display: flex;
+      justify-content: space-around;
+    }
+    br{
+      display: none;
+    }
+  }
+}

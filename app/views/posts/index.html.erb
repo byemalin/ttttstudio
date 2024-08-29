@@ -3,6 +3,16 @@
   <h1>All Posts</h1>
 
   <div>
+      <% if user_signed_in? %>
+        <br>
+        <p>Welcome, <%= current_user.name %></p>
+        <p><strong>Only the gang can see this section.</strong></p>
+        <p><%= link_to 'new blog post', new_post_path %></p>
+        <br>
+      <% end %>
+  </div>
+
+  <div>
     <% @posts.each do |post| %>
       <%= render 'shared/cards/post_card' , post: post%>
     <% end %>

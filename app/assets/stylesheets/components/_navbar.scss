@@ -30,6 +30,10 @@
 }
 
 
+#navbarGang{
+  display: none;
+}
+
 @media only screen and (max-width: 425px){
   #navLogoContainer{
     width: 100%;
@@ -39,7 +43,7 @@
   }
 
   #navbarGang{
-    // display: none;
+    display: none;
   }
 
   #mainNavbar{

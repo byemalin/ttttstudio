@@ -16,8 +16,8 @@
         <li><%= link_to "store", posts_path%></li>
         <br>
         <li><%= link_to "radio", posts_path%></li>
-        <br>
         <% unless user_signed_in? %>
+          <br>
           <%= link_to 'log in', new_user_session_path %>
         <% end %>
       </ul>

@@ -11,11 +11,14 @@
 
   <nav>
       <ul>
+
         <li><%= link_to "blog", posts_path%></li>
+        <% if false %>
         <br>
         <li><%= link_to "store", posts_path%></li>
         <br>
         <li><%= link_to "radio", posts_path%></li>
+        <% end %>
         <% unless user_signed_in? %>
           <br>
           <%= link_to 'log in', new_user_session_path %>

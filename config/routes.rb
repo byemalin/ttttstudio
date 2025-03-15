@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/landing'
   # devise_for :users
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
@@ -10,9 +11,11 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  root "posts#index"
+  root "pages#landing"
 
   resources :posts
+
+  get 'landing', to: 'pages#landing'
 
   # Adding route to show posts associated with 1 user:
   resources :users, only: [:show] do

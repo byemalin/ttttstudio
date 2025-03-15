@@ -2,7 +2,6 @@
 
   <h1><%= @post.title %></h1>
   <%= link_to "#{@post.user.name}", posts_user_path(@post.user) %>
-  <p><%= @post.body %></p>
   <%= @post.body.to_s.html_safe %>
 
 
@@ -34,7 +33,7 @@
     <% if user_signed_in? %>
       <p><strong>Only for the gang:</strong></p>
       <p><%= current_user.name %>, here you can make changes to your post or delete it:</p>
-      <%= link_to 'Edit', edit_post_path(@post) %> |
+      <%= button_to 'Edit', edit_post_path(@post) %>
       <%= button_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
 
 
@@ -47,8 +46,6 @@
       <%= link_to 'sign up', new_user_registration_path %>
     <% end %>
 
-
-    <%= link_to 'Test DELETE', post_path(@post), method: :delete, data: { confirm: 'Testing DELETE?' }, class: 'test-delete-link' %>
 
 
   </div>

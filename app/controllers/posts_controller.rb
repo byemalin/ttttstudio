@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
+
   def index
     # @posts = Post.all
     @posts = Post.order(created_at: :desc)

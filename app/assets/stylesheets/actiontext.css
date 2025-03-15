@@ -12,7 +12,6 @@
  * images in galleries will be squished by the max-width: 33%; rule.
 */
 
-@import "trix/dist/trix";
 
 .trix-content .attachment-gallery > action-text-attachment,
 .trix-content .attachment-gallery > .attachment {

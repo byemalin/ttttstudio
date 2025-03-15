@@ -10,7 +10,9 @@
     <%= link_to "#{post.user.name}", posts_user_path(post.user) %>
   </p>
 
-  <p><%= truncate(post.body, length: 425) %></p>
+  <% if false %>
+    <p><%= truncate(post.body, length: 425) %></p>
+  <% end %>
 
   <div class="alignRight">
     <%= link_to 'See full post', post %>

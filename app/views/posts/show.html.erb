@@ -3,6 +3,9 @@
   <h1><%= @post.title %></h1>
   <%= link_to "#{@post.user.name}", posts_user_path(@post.user) %>
   <p><%= @post.body %></p>
+  <%= @post.body.to_s.html_safe %>
+
+
 
   <br>
 

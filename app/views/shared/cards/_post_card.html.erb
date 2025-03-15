@@ -13,6 +13,8 @@
   <% if false %>
     <p><%= truncate(post.body, length: 425) %></p>
   <% end %>
+  <p><%= truncate(post.body.to_plain_text, length: 425) %></p>
+
 
   <div class="alignRight">
     <%= link_to 'See full post', post %>

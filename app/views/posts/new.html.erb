@@ -23,6 +23,7 @@
   <br>
 
   <p>What do you have to say? Or what are you working on?</p>
+  <p>(Your filenames for attachements are visible so keep them appropriate)</p>
 
   <div class="field">
     <%= form.label :body %>
@@ -52,6 +53,7 @@
 
   <div class="field">
     <%= form.label :images %>
+    <p>These attached images will appear at the end of the post. (You can add multiple)</p>
     <br>
     <%= form.file_field :images, multiple: true, direct_upload: true %>
   </div>

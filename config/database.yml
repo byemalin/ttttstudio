@@ -79,6 +79,3 @@ test:
 #
 production:
   <<: *default
-  database: ttttstudio_production
-  username: ttttstudio
-  password: <%= ENV["TTTTSTUDIO_DATABASE_PASSWORD"] %>

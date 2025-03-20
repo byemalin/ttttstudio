@@ -1,0 +1,24 @@
+<%= form_with(model: @take, local: true) do |form| %>
+  <% if @take.errors.any? %>
+    <div class="errors">
+      <h2><%= pluralize(@take.errors.count, "error") %> prevented save:</h2>
+      <ul>
+        <% @take.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :body %> (max 280 chars)
+    <%= form.text_field :body, size: 60 %>
+  </p>
+
+  <p>
+    <%= form.label :photo %> (optional)
+    <%= form.file_field :photo %>
+  </p>
+
+  <p><%= form.submit %></p>
+<% end %>

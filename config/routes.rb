@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   root "pages#landing"
 
   resources :posts
+  resources :takes
 
   get 'landing', to: 'pages#landing'
 

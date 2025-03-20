@@ -1,0 +1,12 @@
+<h1>Take by <%= @take.user.name %></h1>
+<p><%= @take.body %></p>
+
+<% if @take.photo.attached? %>
+  <%= image_tag @take.photo, alt: "Take photo", width: 400 %>
+<% end %>
+
+<p>Posted on <%= @take.created_at.strftime("%d %b %Y at %H:%M") %></p>
+
+<%= link_to "Edit Take", edit_take_path(@take) %> |
+<%= link_to "Back to Takes", takes_path %> |
+<%= link_to "Delete", take_path(@take), method: :delete, data: { confirm: "Are you sure?" } %>

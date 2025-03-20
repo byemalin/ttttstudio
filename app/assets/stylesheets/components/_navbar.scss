@@ -17,9 +17,11 @@
   }
 }
 
-#navbarGang{
+.postingControls{
   padding: 1rem;
 }
+
+
 
 #teamNav{
   padding: 1rem;
@@ -30,9 +32,6 @@
 }
 
 
-#navbarGang{
-  display: none;
-}
 
 @media only screen and (max-width: 425px){
   #navLogoContainer{
@@ -42,9 +41,6 @@
     margin: 0 auto;
   }
 
-  #navbarGang{
-    display: none;
-  }
 
   #mainNavbar{
     display: grid;

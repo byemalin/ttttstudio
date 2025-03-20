@@ -1,0 +1,10 @@
+<div id="navbarGang">
+  <% if user_signed_in? %>
+    <br>
+    <br>
+    <p>Welcome, <%= current_user.name %></p>
+    <p><strong>Only the gang can see this section.</strong></p>
+    <%= link_to "New Take", new_take_path %>
+    <p><%= link_to 'New Blog Post', new_post_path %></p>
+  <% end %>
+</div>

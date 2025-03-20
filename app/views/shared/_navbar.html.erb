@@ -13,6 +13,8 @@
       <ul>
 
         <li><%= link_to "blog", posts_path%></li>
+        <br>
+        <li><%= link_to "takes", takes_path%></li>
         <% if false %>
         <br>
         <li><%= link_to "store", posts_path%></li>
@@ -29,7 +31,7 @@
 
 </header>
 
-<nav id = "teamNav">
+<nav id="teamNav">
   <br>
   <br>
   <br>
@@ -40,12 +42,13 @@
   </ul>
 </nav>
 
-<div id="navbarGang">
-    <% if user_signed_in? %>
-      <br>
-      <br>
-      <p>Welcome, <%= current_user.name %></p>
-      <p><strong>Only the gang can see this section.</strong></p>
-      <p><%= link_to 'new blog post', new_post_path %></p>
-    <% end %>
-</div>
+<% if user_signed_in? %>
+  <nav class="postingControls">
+    <br>
+    <p>Welcome, <%= current_user.name %></p>
+    <p><strong>Only the gang can see this section.</strong></p>
+    <%= link_to "New Take", new_take_path %>
+    <p><%= link_to 'New Blog Post', new_post_path %></p>
+    <br>
+  </nav>
+<% end %>

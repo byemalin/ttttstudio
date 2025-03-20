@@ -1,6 +1,9 @@
 .takeCard{
-  padding: 1rem 3rem;
+  padding: 1rem 1rem;
   margin: 1rem auto;
+
+
+  width: 70%;
 
   border-radius: 16px;
   border: 0.5px solid grey;
@@ -8,5 +11,13 @@
   footer{
     display: flex;
     justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 900px){
+  .takeCard{
+    width: 90%;
+    // padding: 1rem 1rem;
+    margin: 1rem auto;
   }
 }

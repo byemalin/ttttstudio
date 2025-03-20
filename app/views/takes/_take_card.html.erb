@@ -1,0 +1,20 @@
+<%= link_to take_path(take) do %>
+<% end %>
+
+<div class='takeCard'>
+  <p><%= take.body %></p>
+
+  <% if take.photo.attached? %>
+    <%= image_tag take.photo, alt: "Take photo", width: 300 %>
+  <% end %>
+
+  <footer>
+    <p>
+      <%= link_to "#{take.user.name}", posts_user_path(take.user) %>
+    </p>
+
+    <p>
+      <%= link_to "Details", take_path(take) %>
+    </p>
+  </footer>
+</div>

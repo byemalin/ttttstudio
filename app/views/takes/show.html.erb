@@ -7,6 +7,12 @@
 
 <p>Posted on <%= @take.created_at.strftime("%d %b %Y at %H:%M") %></p>
 
-<%= link_to "Edit Take", edit_take_path(@take) %> |
-<%= link_to "Back to Takes", takes_path %> |
-<%= link_to "Delete", take_path(@take), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= link_to "Back to All Takes", takes_path %>
+
+<% if user_signed_in? %>
+  <br>
+  <br>
+  <p>As usual, only da gang can see these edit controls:</p>
+  <%= link_to "Edit Take", edit_take_path(@take) %> |
+  <%= link_to "Delete", take_path(@take), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>

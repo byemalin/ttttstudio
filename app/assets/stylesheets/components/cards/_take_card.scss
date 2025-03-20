@@ -1,0 +1,12 @@
+.takeCard{
+  padding: 1rem 3rem;
+  margin: 1rem auto;
+
+  border-radius: 16px;
+  border: 0.5px solid grey;
+
+  footer{
+    display: flex;
+    justify-content: space-between;
+  }
+}

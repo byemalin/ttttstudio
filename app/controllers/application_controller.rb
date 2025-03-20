@@ -8,5 +8,6 @@ class ApplicationController < ActionController::Base
     # @jun_user = User.find_by(name: "Jun")
     @malin_user = User.find_by(email: "malin@byemalin.com")
     @rocco_user = User.find_by(email: "rocco.montagnoli@gmail.com")
+    @ezra_user = User.find_by(email: "georgedfurr@gmail.com")
   end
 end

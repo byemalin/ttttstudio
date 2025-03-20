@@ -1,21 +1,6 @@
 <h1>All Takes</h1>
 
 
-
-
-
 <% @takes.each do |take| %>
-  <div>
-    <p><%= take.body %></p>
-     <p>
-      <%= link_to "#{take.user.name}", posts_user_path(take.user) %>
-    </p>
-
-    <% if take.photo.attached? %>
-      <%= image_tag take.photo, alt: "Take photo", width: 300 %>
-    <% end %>
-
-    <p><%= link_to "View", take_path(take) %></p>
-  </div>
-  <hr>
+  <%= render 'take_card', take: take %>
 <% end %>

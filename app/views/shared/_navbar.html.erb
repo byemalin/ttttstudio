@@ -2,12 +2,13 @@
 
 <header id="mainNavbar">
 
-  <a href="/posts">
+  <%= link_to landing_path do %>
     <div id="navLogoContainer">
       <%#= image_tag "logos/TTTT_dot_logo.svg" %>
       <%= image_tag "logos/TTTT_logo_1.svg" %>
     </div>
-  </a>
+  <% end %>
+
 
   <nav>
       <ul>
@@ -36,6 +37,8 @@
   <br>
   <br>
   <ul>
+    <li><%= link_to "Ezra", posts_user_path(@ezra_user)%></li>
+    <br>
     <li><%= link_to "Malin", posts_user_path(@malin_user)%></li>
     <br>
     <li><%= link_to "Rocco", posts_user_path(@rocco_user)%></li>

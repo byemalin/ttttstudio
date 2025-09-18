@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#landing"
 
+  get 'durak', to: 'pages#durak'
+
   resources :posts
   resources :takes
 

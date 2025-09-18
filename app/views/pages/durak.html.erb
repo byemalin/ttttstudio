@@ -1,0 +1,57 @@
+<div class="durak" data-controller="durak">
+  <header class="durak__header">
+    <h1>Online Durak</h1>
+    <p>Host a table, share the game ID with friends, and play the classic Russian card game together in real time.</p>
+  </header>
+
+  <section class="durak__lobby" data-durak-target="joinSection">
+    <div class="durak__field">
+      <label for="durak-game-id">Game ID</label>
+      <input id="durak-game-id" type="text" placeholder="e.g. table-42" data-durak-target="gameId">
+    </div>
+    <div class="durak__field">
+      <label for="durak-player-name">Display name</label>
+      <input id="durak-player-name" type="text" placeholder="e.g. Malin" data-durak-target="name">
+    </div>
+    <div class="durak__actions">
+      <button class="durak__button" data-action="durak#connectToGame">Join table</button>
+      <button class="durak__button durak__button--primary" data-action="durak#startGame" data-durak-target="startButton" disabled>Start game</button>
+    </div>
+    <p class="durak__hint">Anyone with the same Game ID will join the table. Join with at least two players before starting.</p>
+  </section>
+
+  <section class="durak__status">
+    <h2>Table status</h2>
+    <p data-durak-target="status">Waiting for you to join a table…</p>
+    <div class="durak__meta">
+      <div>Trump suit: <span data-durak-target="trump">—</span></div>
+      <div>Deck: <span data-durak-target="deckCount">0</span> cards</div>
+      <div>Discard: <span data-durak-target="discardCount">0</span> cards</div>
+    </div>
+  </section>
+
+  <section class="durak__players" data-durak-target="players">
+    <h2>Players</h2>
+    <div class="durak__playersList" data-durak-target="playersList"></div>
+  </section>
+
+  <section class="durak__table" data-durak-target="table">
+    <h2>Table</h2>
+    <div class="durak__tablePairs" data-durak-target="tablePairs"></div>
+  </section>
+
+  <section class="durak__hand" data-durak-target="hand">
+    <h2>Your hand</h2>
+    <div class="durak__handCards" data-durak-target="handCards"></div>
+  </section>
+
+  <section class="durak__controls" data-durak-target="controls">
+    <button class="durak__button" data-action="durak#pickup" data-durak-target="pickupButton" disabled>Pick up cards</button>
+    <button class="durak__button durak__button--primary" data-action="durak#endTurn" data-durak-target="endTurnButton" disabled>End attack</button>
+  </section>
+
+  <section class="durak__log">
+    <h2>Game log</h2>
+    <div class="durak__logFeed" data-durak-target="log"></div>
+  </section>
+</div>
